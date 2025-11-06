@@ -8,11 +8,12 @@
             <h1><a href="/">Bloc d'Ishaa</a></h1>
         </header>
 
-        <article>
-            <time>publicat: 06.11.2025</time>
-            <h2><a href="">El meu primer post</a></h2>
-            <p>Sóc Ishaa, una desenvolupadora web i multiplataforma amb 20 anys. M'encanta crear aplicacions i pàgines web utilitzant diferents tecnologies. En aquest espai compartiré algunes de les meves experiències i coneixements sobre programació i desenvolupament.</p>
-        </article>
-
+        {% for post in posts %}
+            <article>
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.text }}</p>
+                <p><em>Publicado el {{ post.published_date }}</em></p>
+            </article>
+        {% endfor %}
     </body>
 </html>
